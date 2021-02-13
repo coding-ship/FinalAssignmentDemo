@@ -1,0 +1,100 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+	<div class="logo-image">
+		<img src="https://www.jcrinc.com/-/media/enterprise-imagery/logos/jcr-r-mark.png?h=152&w=532&hash=B19DACCFCF1F6ACDB0D829B425801D6F" class="img-fluid">
+  </div>
+    
+	
+	<div style="position:absolute; right:25px;">
+		<a routerLink="/">LogOut</a>
+	</div>
+</nav>
+	
+<div class="edit">
+    <form  #Form="ngForm" (ngSubmit)="onsubmit(Form.value)">
+		<h2>Edit User Detail</h2>
+		<div style="position:absolute; right:25px;">
+			<a style="color: black; cursor: pointer;" (click)="back()">BACK</a></div>
+			<!-- <a style="color: black;" routerLink="/home">BACK</a></div> -->
+			<br>
+			<div [hidden]="Form.valid">
+				<div *ngIf="status==true"
+				class="alert alert-danger">All Fields Are Required!
+				</div>
+			</div>
+			<div [hidden]="Form.valid && Form.pristine"  >
+				
+				<div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="alert alert-danger" >
+					Firstname should only contain lowercase or uppercase letters.
+				</div> 
+				<div  *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="alert alert-danger">
+				Lastname should only contain lowercase or uppercase letters.
+			   </div> 
+			  
+			   <div [hidden]="phone.valid || phone.pristine" class="alert alert-danger"
+				>
+			 Please enter a valid 10-digit Phone number.
+		   </div>
+	
+			   
+		</div>
+				
+			
+				<!-- <div [hidden]="Form.valid "
+				class="alert alert-danger">All Fields Are Required!
+			  </div> -->
+			
+			<hr>
+			<b><label>First Name</label></b>
+		
+        <div class="form-group">
+		
+			<input type="text" class="form-control" name="fname" placeholder="Enter Your First Name" required
+			[(ngModel)]="cust.fname" #fname="ngModel">
+			
+			 <!-- <div [hidden]="fname.valid || fname.pristine"
+			class="alert alert-danger">
+		 Firstname is required
+	   </div>  -->
+		</div> 
+		<b><label>Last Name</label></b>
+		<div class="form-group">
+				<input type="text" class="form-control" name="lname" placeholder="Enter Your Last Name" required
+				[(ngModel)]="cust.lname" #lname="ngModel" >
+				<!-- <div [hidden]="lname.valid || lname.pristine"
+				class="alert alert-danger">
+			 Lastname is required
+		   </div>  -->
+		</div>
+		<b><label>Phone Number</label></b>
+        <div class="form-group">
+			<input type="teL" class="form-control" name="phone" placeholder="Enter Your Phone No." pattern="[7-9]{1}[0-9]{9}"
+			 required 
+			[(ngModel)]="cust.phone" #phone="ngModel">
+			<!-- <div [hidden]="phone.valid || phone.pristine"
+			class="alert alert-danger">
+		 Phone no. is required
+	   </div>  -->
+		</div>
+		
+		<div class="container">
+			<div class="vertical-center" style="display: inline-block; margin-top: 5%;">
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+				
+				 
+			<button type="submit"  class="btn btn-primary" >Save</button>
+			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+			<button type="reset"  (click)="reset()" class="btn btn-dark"
+			style=" background-color: darkslategray;color: wheat;  "
+			>Reset</button>
+			</div>
+		</div>
+        <!-- <button type="submit"  class="btn btn-primary " id="save" >Save</button>
+		
+		<button type="reset" class="btn btn-secondary" id="reset" (click)="reset()"
+		style=" background-color: darkslategray;color: wheat;" 
+		 >Reset</button> -->
+    
+    </form>
+</div>
+

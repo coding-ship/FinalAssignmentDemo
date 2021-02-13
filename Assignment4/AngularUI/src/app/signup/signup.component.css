@@ -1,0 +1,89 @@
+
+#signup{
+    margin-left: 13%;
+    margin-top: 10%;
+}
+#reset{
+    margin-top: 10%;
+    margin-left: 15%;
+}
+#usertype {
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    padding: 8px 16px;
+    color:  #4f97e9;
+    cursor: pointer;
+    text-align: center;
+}
+.back{
+    margin-left: 15px;
+}
+input.ng-invalid{
+border-left: 5px solid red;
+}
+
+input.ng-valid{
+    border-left: 5px solid green;
+    }
+
+.center {
+    margin: 0;
+    margin-left: 33%;
+    width: 1000px;
+    border: 2px solid #34568B; 
+    padding: 10px;
+  }
+  /* logo-image{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+} */
+.logo-image{
+   
+    width: 250px;
+    height: 70px ;
+    position: sticky;
+   
+    
+}
+.logo-image1{
+    max-width: 22%;
+    max-height: 35%;
+    
+    margin-right: 22%;
+    margin-bottom: 1%;
+   
+} 
+/* .form-group{
+    display: flex;
+} */
+label {
+     color: #333;
+ margin-top: 10px;
+    margin-left: 0;
+    text-align: right;
+    height: 30px;
+    clear: both;
+    float: left;
+   }
+   
+   input,#select{
+   height: 30px;
+    width: 300px;
+    border: 1px solid #000;
+    margin-top: 10px;
+    float: right;
+   }
+   .buttons{
+       margin-top: 15%;
+   }
+.alert {
+    padding: 0px;
+   
+    margin-bottom: 0px;
+  }

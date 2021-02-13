@@ -1,0 +1,89 @@
+
+  
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+   
+    <div class="logo-image">
+          <img src="https://www.jcrinc.com/-/media/enterprise-imagery/logos/jcr-r-mark.png?h=152&w=532&hash=B19DACCFCF1F6ACDB0D829B425801D6F" class="img-fluid">
+    </div>
+    <h3 style="margin-left: 39%;"><b>User Dashboard</b></h3>
+    <div style="position:absolute; right:60px; top: 30px;display: inline-block;">
+      <p><b>{{loginusername}}</b>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      <a routerLink="/">LogOut</a><br><b>
+      Role:User</b></p>
+    </div>
+    <!-- <div style="position:absolute; right:110px; top: 0; "><b>
+      <br><br>
+    <p>{{loginusername}}<br>
+    Role:User</p></b>
+    
+    </div>
+
+
+<div style="position:absolute; right:25px;"><a routerLink="/">LogOut</a></div>
+<p></p> -->
+</nav>
+
+<div style="margin-left: 75%;"><button class="btn btn-primary" (click)="addnew()">
+  Create New Observation</button></div>
+<br>
+
+<div class="box">
+<table style = "position:relative;" >
+   
+    <tr>
+       
+        <th>Tracer Name</th>
+        <th>Tracer Action</th>
+        <th>Observation Date</th>
+        <th>Observation Name</th>
+        <th>Total No. Of Observations</th>
+    </tr>
+    <tr *ngFor="let listdata of list">
+      
+        <td>{{listdata.tracername}}</td>
+        <td>
+       
+        <select id="traceraction" style="color: rgba(5, 6, 7, 0.774); background-color: wheat;"
+        (change) = "change($event,listdata)">
+          <option selected>Select Action
+          </option>
+          
+        <option value="Edit Observation">
+         Edit Observation</option>
+        <option value="Delete">Delete
+          
+        </option>
+          </select>
+         
+        </td> 
+        <td>{{listdata.observationdate | date:"dd/MM/yy"}}</td>
+        <td>{{listdata.observationname}}</td>
+        <td>{{listdata.noobservation}}</td>
+        
+         
+<div id="id01" class="modal" [hidden]="show==true">
+  <form class="modal-content" >
+   <div class="container">
+     <h1 style=" background-color:#4772b8;">Delete</h1>
+     <p>Are you sure you want to delete this Observation?</p>
+
+     <div class="clearfix">
+      <button type="button"  (click)="Delete()" class="deletebtn">Delete</button>
+    
+       <button type="button" class="cancelbtn" (click)="Del()">Cancel</button>
+       </div>
+   </div>
+ </form>
+</div>
+
+        &nbsp; &nbsp;
+        
+       
+    </tr>
+    <tr><div style="margin:right; margin-top: 10%; margin-left: 10%; text-decoration: underline;"
+       *ngIf="list.length==0">No Records Available</div></tr>
+</table> 
+
+</div> 
